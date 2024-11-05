@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  icp-dev-env:
+    image: ghcr.io/dfinity/icp-dev-env:latest
+    container_name: icp-dev-env-win
+    platform: linux/x86_64
+    working_dir: /root/app
+    volumes:
+      - .:/root/app
+    command: tail -f /dev/null
