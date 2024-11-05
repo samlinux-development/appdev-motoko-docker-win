@@ -9,3 +9,12 @@ services:
     volumes:
       - .:/root/app
     command: tail -f /dev/null
+    ports:
+      - "4943:4943"  # Map container port to host
+    environment:
+      - DFX_NETWORK_HOST=0.0.0.0  # Allow external connections
+    networks:
+      - icp_network
+networks:
+  icp_network:
+    driver: bridge
